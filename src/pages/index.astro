@@ -4,14 +4,17 @@ import "../styles/main.css"
 import ListItem from "../components/ListItem.astro"
 
 import { getCollection, getEntry } from "astro:content"
-import type { Code } from "astro:components"
-const allPosts = await getCollection("posts")
+
+const allPosts = (await getCollection("posts")).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+)
 ---
 
 <Layout title="Welcome to Astro">
   <h1>
-    Design Engineering Resources by <a href="https://arun.is" target="_blank"
-      >Arun Venkatesan</a
+    Design Engineering Resources by&nbsp;<a
+      href="https://arun.is"
+      target="_blank">Arun&nbsp;Venkatesan</a
     >
   </h1>
   <h2>Posts</h2>
