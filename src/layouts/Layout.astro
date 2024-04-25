@@ -1,3 +1,25 @@
+---
+interface Props {
+	title: string
+}
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+
 <!DOCTYPE html>
 <html class="no-js" lang="">
   <head>
@@ -23,6 +45,7 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="icon.png" /> 
     <link rel="manifest" href="site.webmanifest" />-->
+	<meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#ffffff" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://rsms.me/" />
