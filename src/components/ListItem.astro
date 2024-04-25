@@ -1,5 +1,6 @@
 ---
-const { author, date, description, title, url } = Astro.props
+const { author, date, description, featured, title, url } = Astro.props
+console.log(Astro.props)
 
 const dateOptions: object = {
   year: "numeric",
@@ -10,8 +11,8 @@ const dateOptions: object = {
 const formattedDate = new Date(date).toLocaleDateString("en-US", dateOptions)
 ---
 
-<li>
-  <a href={url} target="_blank"><h3 class="title">{title}&nbsp;↗</h3></a>
+<li class={featured ? "featured" : ""}>
+  <a href={url} target="_blank"><h3 class="title">{title}</h3></a>
   <p class="author">by {author} on {formattedDate}</p>
   <p>
     {description}

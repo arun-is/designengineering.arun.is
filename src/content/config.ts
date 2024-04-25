@@ -7,6 +7,7 @@ const postsCollection = defineCollection({
     author: z.string(),
     description: z.string(),
     date: z.date(),
+    featured: z.boolean(),
     url: z.string().url()
   })
 })
