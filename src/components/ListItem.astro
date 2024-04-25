@@ -1,0 +1,19 @@
+---
+const { author, date, description, title, url } = Astro.props
+
+const dateOptions: object = {
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+}
+
+const formattedDate = new Date(date).toLocaleDateString("en-US", dateOptions)
+---
+
+<li>
+  <a href={url} target="_blank"><h3 class="title">{title} ↗</h3></a>
+  <p class="author">by {author} on {formattedDate}</p>
+  <p>
+    {description}
+  </p>
+</li>
