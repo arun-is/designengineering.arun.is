@@ -40,22 +40,14 @@ body {
 h1,
 h2,
 h3 {
-  margin-top: 0px;
+  margin: 0px;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5rem;
 }
 
-h1 {
-  margin-bottom: 0px;
-}
-
 h2 {
   margin: 64px 0px 32px 0px;
-}
-
-h3 {
-  margin: 0px;
 }
 
 p {
