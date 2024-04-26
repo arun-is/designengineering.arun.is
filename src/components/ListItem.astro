@@ -13,7 +13,12 @@ const formattedDate = new Date(date).toLocaleDateString("en-US", dateOptions)
 
 <li class={featured ? "featured" : ""}>
   <a href={url} target="_blank"><h3 class="title">{title}</h3></a>
-  <p class="author">by {author} on {formattedDate}</p>
+  <p class="author">
+    {formattedDate}
+  </p>
+  <p class="author">
+    {author}
+  </p>
   <p>
     {description}
   </p>
