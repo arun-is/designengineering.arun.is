@@ -1,5 +1,5 @@
 ---
-title: SVG Animations
+title: The Joy of React
 author: Josh W Comeau
 date: 2022-06-07
 hidedate: true
