@@ -27,7 +27,7 @@ body {
   box-sizing: border-box;
   background-color: var(--white);
   min-height: 100vh;
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 96px 64px;
 }
@@ -91,7 +91,7 @@ ul {
   padding: 0px;
   display: grid;
   gap: 32px;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   list-style-type: none;
 }
 
