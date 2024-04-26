@@ -1,14 +1,16 @@
 ---
 const { author, date, description, featured, title, url } = Astro.props
-console.log(Astro.props)
 
+const offsetDate = new Date(date.getTime() - date.getTimezoneOffset() * -60000)
 const dateOptions: object = {
   year: "numeric",
   month: "long",
   day: "numeric"
 }
-
-const formattedDate = new Date(date).toLocaleDateString("en-US", dateOptions)
+const formattedDate = new Date(offsetDate).toLocaleDateString(
+  "en-US",
+  dateOptions
+)
 ---
 
 <li class={featured ? "featured" : ""}>
