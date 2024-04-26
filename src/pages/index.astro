@@ -10,13 +10,15 @@ const allItems = (await getCollection("items")).sort(
 )
 
 const categorizedItems = allItems.reduce((acc, item) => {
-  const category = item.slug.split("/")[0]
+  const category = item.id.split("/")[0]
   if (!acc[category]) {
     acc[category] = []
   }
   acc[category].push(item)
   return acc
 }, {})
+
+console.log(allItems)
 ---
 
 <Layout title="Welcome to Astro">
@@ -32,12 +34,25 @@ const categorizedItems = allItems.reduce((acc, item) => {
       target="_blank">→ Contribute on GitHub</a
     >
   </p>
-  <h2>Posts</h2>
-  <ul>
-    {categorizedItems["posts"].map(({ data }) => <ListItem {...data} />)}
-  </ul>
-  <h2>Courses</h2>
-  <ul>
-    {categorizedItems["courses"].map(({ data }) => <ListItem {...data} />)}
-  </ul>
+
+  {
+    Object.keys(categorizedItems)
+      .sort()
+      .map((category) => (
+        <>
+          <h2>
+            {category
+              .replace(/([A-Z])/g, " $1")
+              .trim()
+              .toLowerCase()
+              .replace(/^\w/, (c) => c.toUpperCase())}
+          </h2>
+          <ul>
+            {categorizedItems[category].map(({ data }) => (
+              <ListItem {...data} />
+            ))}
+          </ul>
+        </>
+      ))
+  }
 </Layout>
