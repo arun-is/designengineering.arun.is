@@ -8,6 +8,10 @@
   font-feature-settings:
     "liga" 1,
     "calt" 1; /* fix for Chrome */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+
   font-size: 16px;
   background-color: var(--light-gray);
   color: var(--black);
@@ -108,6 +112,9 @@ a {
   transition: opacity 0.2s linear;
 }
 
-a:hover {
-  opacity: 0.5;
+@media (hover: hover) {
+  /* when hover is supported */
+  a:hover {
+    opacity: 0.5;
+  }
 }
