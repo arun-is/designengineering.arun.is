@@ -2,7 +2,7 @@
 title: SVG Animations
 author: Nanda Syahrasyad
 date: 2024-04-05
-inprogress: true
+hidedate: true
 description:
   A text-based mini-course on making whimsical, playful SVG animations
 featured: false
