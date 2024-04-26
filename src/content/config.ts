@@ -7,6 +7,7 @@ const itemsCollection = defineCollection({
     author: z.string(),
     description: z.string(),
     date: z.date(),
+    inprogress: z.boolean().optional(),
     featured: z.boolean(),
     url: z.string().url()
   })

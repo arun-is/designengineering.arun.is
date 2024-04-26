@@ -1,5 +1,6 @@
 ---
-const { author, date, description, featured, title, url } = Astro.props
+const { author, date, description, featured, inprogress, title, url } =
+  Astro.props
 
 const offsetDate = new Date(date.getTime() - date.getTimezoneOffset() * -60000)
 const dateOptions: object = {
@@ -16,7 +17,7 @@ const formattedDate = new Date(offsetDate).toLocaleDateString(
 <li class={featured ? "featured" : ""}>
   <a href={url} target="_blank"><h3 class="title">{title}</h3></a>
   <p class="dim">
-    {formattedDate}
+    {inprogress ? "In progress" : formattedDate}
   </p>
   <p class="dim">
     {author}

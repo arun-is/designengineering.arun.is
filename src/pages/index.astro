@@ -8,6 +8,15 @@ import { getCollection, getEntry } from "astro:content"
 const allItems = (await getCollection("items")).sort(
   (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 )
+
+const categorizedItems = allItems.reduce((acc, item) => {
+  const category = item.slug.split("/")[0]
+  if (!acc[category]) {
+    acc[category] = []
+  }
+  acc[category].push(item)
+  return acc
+}, {})
 ---
 
 <Layout title="Welcome to Astro">
@@ -25,6 +34,10 @@ const allItems = (await getCollection("items")).sort(
   </p>
   <h2>Posts</h2>
   <ul>
-    {allItems.map(({ data }) => <ListItem {...data} />)}
+    {categorizedItems["posts"].map(({ data }) => <ListItem {...data} />)}
+  </ul>
+  <h2>Courses</h2>
+  <ul>
+    {categorizedItems["courses"].map(({ data }) => <ListItem {...data} />)}
   </ul>
 </Layout>
