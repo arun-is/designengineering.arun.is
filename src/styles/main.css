@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 64px 48px;
+  padding: 96px 64px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,15 +45,13 @@ body {
 
 @media (max-width: 1024px) {
   body {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 64px 32px;
   }
 }
 
 @media (max-width: 768px) {
   body {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 48px 24px;
   }
 }
 
