@@ -1,6 +1,7 @@
 ---
 title: The Joy of React
 author: Josh W Comeau
+cost: 249.0
 date: 2022-06-07
 hidedate: true
 description:

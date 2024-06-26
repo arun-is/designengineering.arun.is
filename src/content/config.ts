@@ -3,12 +3,13 @@ import { z, defineCollection } from "astro:content"
 const itemsCollection = defineCollection({
   type: "content", // v2.5.0 and later
   schema: z.object({
-    title: z.string(),
     author: z.string(),
-    description: z.string(),
+    cost: z.number().optional(),
     date: z.date(),
-    hidedate: z.boolean().optional(),
+    description: z.string(),
     featured: z.boolean(),
+    hidedate: z.boolean().optional(),
+    title: z.string(),
     url: z.string().url()
   })
 })

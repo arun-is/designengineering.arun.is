@@ -1,6 +1,7 @@
 ---
 title: SVG Animations
 author: Nanda Syahrasyad
+cost: 119.0
 date: 2024-04-05
 hidedate: true
 description:

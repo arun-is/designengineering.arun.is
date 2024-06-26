@@ -1,6 +1,7 @@
 ---
 title: "W3Cx: Introduction to Web Accessibility"
 author: W3C
+cost: 0.00
 date: 2019-12-03
 hidedate: true
 description:
