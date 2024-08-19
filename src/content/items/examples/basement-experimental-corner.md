@@ -6,5 +6,6 @@ description:
   All kinds of 3d visuals, animations, shaders and creative development related
   stuff
 featured: true
+hidedate: true
 url: https://lab.basement.studio/
 ---
